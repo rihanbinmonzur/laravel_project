@@ -1,133 +1,900 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation | Octopus - Admin Template</title>
+    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+    <meta name="author" content="uttaraitpark">
+    <meta name="copyright" content="uttaraitpark">
+    <link rel="shortcut icon" type="image/png" href="{{asset('img/favicon.ico')}}">
+    <link rel="stylesheet" href="{{asset('assets/https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/tree-viewer.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<body>
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
+    <div class="wrapper">
+        <div class="left-side">
+            <div class="logo">
+                <img src="img/logo.png" alt="" />
+            </div>
+            <div class="left-content">
+                <ul role="tablist">
+                    <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Welcome</a></li>
+                    <li role="presentation"><a href="#two" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Main File Structure</a></li>
+                    <li role="presentation"><a href="#three" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>HTML Structure</a></li>
+                    <li role="presentation"><a href="#six" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Plugins stractures</a></li>
+                    <li role="presentation"><a href="#source" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>Sources & Credits</a></li>
+                    <li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Support</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright &#169; 2018 <a href="https://colorlib.com/wp/forums/" >SRThemes</a></p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="right-content">
+                <div id="one" class="content active fade in">
+                    <h1><span>Octopus</span> - Octopus Admin Template</h1>
+                    <div class="content-welcome">
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div class="created">
+                        <p>
+                            Created: 04/11/2018
+                            <br> Latest Update: 04/11/2018
+                            <br> By: Colorlib
+                            
+                            
+                            <br>
+                            <br> Thank you for purchasing our theme. If you have any question, please feel free to contact us from <a href="https://colorlib.com/wp/forums/">here</a>.
+                        </p>
                     </div>
                 </div>
+                <div id="two" class="content fade">
+                    <h1>Main File Structure</h1>
+                    <p>
+                        All the file are well organized, its so easy to work with.
+                        <br> 1. Unzip the files.
+                        <br> 2. Open "Octopus" folder.
+                        <br> You will find the html markup file on the root that will be edited.
+                        <br> Also you will see 4 directories, css, js, fonts and images.
+                        <br> In the first folder Content only styling files the all the other files expect the htmls.
+                        <br> Js folder contain only the jquery library. Fonts folder contain essetial font files for fonts.
+                    </p>
+                    <pre>
+								<div class="tree-viewer-pd" id="jstree1">
+                                    <ul>
+                                        <li class="jstree-open">Octopus
+                                            <ul>
+                                                <li>css
+                                                    <ul>
+														<li>chosen
+															<ul>
+																<li data-jstree='"type":"css"}'>bootstrap-chosen.css</li>
+															</ul>
+														</li>
+														<li>code-editor
+															<ul>
+																<li data-jstree='"type":"css"}'>ambiance.css</li>
+																<li data-jstree='"type":"css"}'>codemirror.css</li>
+															</ul>
+														</li>
+														<li>colorpicker
+															<ul>
+																<li data-jstree='"type":"css"}'>colorpicker.css</li>
+															</ul>
+														</li>
+														<li>cropper
+															<ul>
+																<li data-jstree='"type":"css"}'>cropper.min.css</li>
+															</ul>
+														</li>
+														<li>datapicker
+															<ul>
+																<li data-jstree='"type":"css"}'>datepicker3.css</li>
+															</ul>
+														</li>
+														<li>data-table
+															<ul>
+																<li data-jstree='"type":"css"}'>bootstrap-editable.css</li>
+																<li data-jstree='"type":"css"}'>bootstrap-table.css</li>
+															</ul>
+														</li>
+														<li>duallistbox
+															<ul>
+																<li data-jstree='"type":"css"}'>bootstrap-duallistbox.min.css</li>
+															</ul>
+														</li>
+														<li>form
+															<ul>
+																<li data-jstree='"type":"css"}'>all-type-forms.css</li>
+																<li data-jstree='"type":"css"}'>themesaller-forms.css</li>
+															</ul>
+														</li>
+														<li>ionRangeSlider
+															<ul>
+																<li data-jstree='"type":"css"}'>ion.rangeSlider.css</li>
+																<li data-jstree='"type":"css"}'>ion.rangeSlider.skinFlat.css</li>
+															</ul>
+														</li>
+														<li>jvectormap
+															<ul>
+																<li data-jstree='"type":"css"}'>jquery-jvectormap-2.0.3.css</li>
+															</ul>
+														</li>
+														<li>preloader
+															<ul>
+																<li data-jstree='"type":"css"}'>preloader-style.css</li>
+															</ul>
+														</li>
+														<li>select2
+															<ul>
+																<li data-jstree='"type":"css"}'>select2.min.css</li>
+															</ul>
+														</li>
+														<li>switcher
+															<ul>
+																<li data-jstree='"type":"css"}'>color-one.css</li>
+																<li data-jstree='"type":"css"}'>color-two.css</li>
+																<li data-jstree='"type":"css"}'>color-three.css</li>
+																<li data-jstree='"type":"css"}'>color-four.css</li>
+																<li data-jstree='"type":"css"}'>color-five.css</li>
+																<li data-jstree='"type":"css"}'>color-six.css</li>
+																<li data-jstree='"type":"css"}'>color-seven.css</li>
+																<li data-jstree='"type":"css"}'>color-eight.css</li>
+																<li data-jstree='"type":"css"}'>color-nine.css</li>
+																<li data-jstree='"type":"css"}'>color-ten.css</li>
+															</ul>
+														</li>
+														<li>touchspin
+															<ul>
+																<li data-jstree='"type":"css"}'>jquery.bootstrap-touchspin.min.css</li>
+															</ul>
+														</li>
+														<li>tree-viewer
+															<ul>
+																<li data-jstree='"type":"css"}'>jtree-viewer.css</li>
+															</ul>
+														</li>
+                                                        <li data-jstree='"type":"css"}'>accordions.css</li>
+                                                        <li data-jstree='"type":"css"}'>adminpro-custon-icon.css</li>
+                                                        <li data-jstree='"type":"css"}'>alerts.css</li>
+                                                        <li data-jstree='"type":"css"}'>animate.css</li>
+                                                        <li data-jstree='"type":"css"}'>bootstrap-editable.css</li>
+                                                        <li data-jstree='"type":"css"}'>buttons.css</li>
+                                                        <li data-jstree='"type":"css"}'>c3.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>charts.css</li>
+                                                        <li data-jstree='"type":"css"}'>datetimepicker.css</li>
+                                                        <li data-jstree='"type":"css"}'>dropzone.css</li>
+                                                        <li data-jstree='"type":"css"}'>form.css</li>
+                                                        <li data-jstree='"type":"css"}'>jquery.mCustomScrollbar.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>Lobibox.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>meanmenu.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>modals.css</li>
+                                                        <li data-jstree='"type":"css"}'>normalize.css</li>
+                                                        <li data-jstree='"type":"css"}'>notifications.css</li>
+                                                        <li data-jstree='"type":"css"}'>select2.css</li>
+                                                        <li data-jstree='"type":"css"}'>select2-bootstrap.css</li>
+                                                        <li data-jstree='"type":"css"}'>summernote.css</li>
+                                                        <li data-jstree='"type":"css"}'>tab-menus.css</li>
+                                                        <li data-jstree='"type":"css"}'>tabs.css</li>
+                                                        <li data-jstree='"type":"css"}'>typeahead.js-bootstrap.css</li>
+                                                        <li data-jstree='"type":"css"}'>x-editor-style.css</li>
+                                                        <li data-jstree='"type":"css"}'>bootstrap.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>font-awesome.min.css</li>
+                                                        <li data-jstree='"type":"css"}'>responsive.css</li>
+                                                        <li data-jstree='"type":"css"}'>tree-viewer.css</li>
+                                                        <li data-jstree='"type":"css"}'>main.css</li>
+                                                    </ul>
+                                                </li>
+												<li>fonts
+                                                    <ul>
+                                                        <li data-jstree='"type":"otf"}'>FontAwesome.otf</li>
+                                                        <li data-jstree='"type":"ttf"}'>fontawesome-webfont.ttf</li>
+                                                        <li data-jstree='"type":"woff"}'>fontawesome-webfont.woff</li>
+                                                        <li data-jstree='"type":"woff"}'>glyphicons-halflings-regular.woff</li>
+                                                    </ul>
+                                                </li>
+												<li class="jstree-open">img
+                                                    <ul>
+                                                        <li>blog-details
+															<ul>
+																<li data-jstree='"type":"png"}'>1.jpg</li>
+															</ul>
+														</li>
+                                                        <li>contact
+															<ul>
+																<li data-jstree='"type":"png"}'>1.jpg</li>
+																<li data-jstree='"type":"png"}'>2.jpg</li>
+																<li data-jstree='"type":"png"}'>3.jpg</li>
+																<li data-jstree='"type":"png"}'>4.jpg</li>
+															</ul>
+														</li>
+                                                        <li>logo
+															<ul>
+																<li data-jstree='"type":"png"}'>logo.png</li>
+															</ul>
+														</li>
+                                                        <li>cropper
+															<ul>
+																<li data-jstree='"type":"jpg"}'>1.jpg</li>
+															</ul>
+														</li>
+                                                        <li>product
+															<ul>
+																<li data-jstree='"type":"jpg"}'>1.jpg</li>
+																<li data-jstree='"type":"jpg"}'>1-big.jpg</li>
+																<li data-jstree='"type":"jpg"}'>1-small.jpg</li>
+																<li data-jstree='"type":"jpg"}'>2.jpg</li>
+																<li data-jstree='"type":"jpg"}'>2-big.jpg</li>
+																<li data-jstree='"type":"jpg"}'>2-small.jpg</li>
+																<li data-jstree='"type":"jpg"}'>3.jpg</li>
+																<li data-jstree='"type":"jpg"}'>3-big.jpg</li>
+																<li data-jstree='"type":"jpg"}'>3-small.jpg</li>
+																<li data-jstree='"type":"jpg"}'>4.jpg</li>
+																<li data-jstree='"type":"jpg"}'>4-big.jpg</li>
+																<li data-jstree='"type":"jpg"}'>4-small.jpg</li>
+																<li data-jstree='"type":"jpg"}'>11-300x300.jpg</li>
+																<li data-jstree='"type":"jpg"}'>p8-375x375.jpg</li>
+																<li data-jstree='"type":"jpg"}'>product072-1-600x600.jpg</li>
+															</ul>
+														</li>
+                                                        <li data-jstree='"type":"png"}'>clear.png</li>
+                                                        <li data-jstree='"type":"ico"}'>favicon.ico</li>
+                                                        <li class="text-navy" data-jstree='"type":"img"}'>green1.png</li>
+                                                    </ul>
+                                                </li>
+                                                <li>pdf
+                                                    <ul>
+                                                        <li data-jstree='"type":"ogg"}'>mamunur.pdf</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="jstree-open">js
+                                                    <ul>
+														<li>c3-charts
+															<ul>
+																<li data-jstree='"type":"js"}'>c3.min.js</li>
+																<li data-jstree='"type":"js"}'>c3-active.js</li>
+																<li data-jstree='"type":"js"}'>d3.min.js</li>
+															</ul>
+														</li>
+														<li>charts
+															<ul>
+																<li data-jstree='"type":"js"}'>area-chart.js</li>
+																<li data-jstree='"type":"js"}'>bar-chart.js</li>
+																<li data-jstree='"type":"js"}'>Chart.js</li>
+																<li data-jstree='"type":"js"}'>line-chart.js</li>
+																<li data-jstree='"type":"js"}'>rounded-chart.js</li>
+															</ul>
+														</li>
+														<li>chat-active
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.chat.js</li>
+															</ul>
+														</li>
+														<li>chosen
+															<ul>
+																<li data-jstree='"type":"js"}'>chosen.jquery.js</li>
+																<li data-jstree='"type":"js"}'>chosen-active.js</li>
+															</ul>
+														</li>
+														<li>code-editor
+															<ul>
+																<li data-jstree='"type":"js"}'>code-editor.js</li>
+																<li data-jstree='"type":"js"}'>code-editor-active.js</li>
+																<li data-jstree='"type":"js"}'>codemirror.js</li>
+															</ul>
+														</li>
+														<li>colorpicker
+															<ul>
+																<li data-jstree='"type":"js"}'>color-picker-active.js</li>
+																<li data-jstree='"type":"js"}'>jquery.spectrum.min.js</li>
+															</ul>
+														</li>
+														<li>counterup
+															<ul>
+																<li data-jstree='"type":"js"}'>counterup-active.js</li>
+																<li data-jstree='"type":"js"}'>jquery.counterup.min.js</li>
+																<li data-jstree='"type":"js"}'>waypoints.min.js</li>
+															</ul>
+														</li>
+														<li>cropper
+															<ul>
+																<li data-jstree='"type":"js"}'>cropper.min.js</li>
+																<li data-jstree='"type":"js"}'>cropper-actice.js</li>
+															</ul>
+														</li>
+														<li>data-map
+															<ul>
+																<li data-jstree='"type":"js"}'>bootstrap3-typeahead.min.js</li>
+																<li data-jstree='"type":"js"}'>d3.min.js</li>
+																<li data-jstree='"type":"js"}'>datamaps.all.min.js</li>
+																<li data-jstree='"type":"js"}'>data-maps-active.js</li>
+																<li data-jstree='"type":"js"}'>topojson.js</li>
+															</ul>
+														</li>
+														<li>datapicker
+															<ul>
+																<li data-jstree='"type":"js"}'>bootstrap-datepicker.js</li>
+																<li data-jstree='"type":"js"}'>datepicker-active.js</li>
+															</ul>
+														</li>
+														<li>data-table
+															<ul>
+																<li data-jstree='"type":"js"}'>bootstrap-editable.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table-cookie.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table-editable.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table-export.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table-key-events.js</li>
+																<li data-jstree='"type":"js"}'>bootstrap-table-resizable.js</li>
+																<li data-jstree='"type":"js"}'>colResizable-1.5.source.js</li>
+																<li data-jstree='"type":"js"}'>data-table-active.js</li>
+																<li data-jstree='"type":"js"}'>tableExport.js</li>
+															</ul>
+														</li>
+														<li>duallistbox
+															<ul>
+																<li data-jstree='"type":"js"}'>duallistbox.active.js</li>
+																<li data-jstree='"type":"js"}'>jquery.bootstrap-duallistbox.js</li>
+															</ul>
+														</li>
+														<li>flot
+															<ul>
+																<li data-jstree='"type":"js"}'>Chart.min.js</li>
+																<li data-jstree='"type":"js"}'>dashtwo-flot-active.js</li>
+																<li data-jstree='"type":"js"}'>flot-active.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.pie.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.resize.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.spline.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.symbol.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.time.js</li>
+																<li data-jstree='"type":"js"}'>jquery.flot.tooltip.min.js</li>
+																<li data-jstree='"type":"js"}'>widget-flot-chart-active.js</li>
+															</ul>
+														</li>
+														<li>google.maps
+															<ul>
+																<li data-jstree='"type":"js"}'>google.maps-active.js</li>
+															</ul>
+														</li>
+														<li>icheck
+															<ul>
+																<li data-jstree='"type":"js"}'>icheck.min.js</li>
+																<li data-jstree='"type":"js"}'>icheck-active.js</li>
+															</ul>
+														</li>
+														<li>input-mask
+															<ul>
+																<li data-jstree='"type":"js"}'>jasny-bootstrap.min.js</li>
+															</ul>
+														</li>
+														<li>ionRangeSlider
+															<ul>
+																<li data-jstree='"type":"js"}'>ion.rangeSlider.active.js</li>
+																<li data-jstree='"type":"js"}'>ion.rangeSlider.min.js</li>
+															</ul>
+														</li>
+														<li>jvectormap
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery-jvectormap-2.0.2.min.js</li>
+																<li data-jstree='"type":"js"}'>jquery-jvectormap-world-mill-en.js</li>
+																<li data-jstree='"type":"js"}'>jvectormap-active.js</li>
+															</ul>
+														</li>
+														<li>knob
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.knob.js</li>
+																<li data-jstree='"type":"js"}'>knob-active.js</li>
+															</ul>
+														</li>
+														<li>map
+															<ul>
+																<li data-jstree='"type":"js"}'>france_departments.js</li>
+																<li data-jstree='"type":"js"}'>jquery.mapael.js</li>
+																<li data-jstree='"type":"js"}'>map-active.js</li>
+																<li data-jstree='"type":"js"}'>raphael.min.js</li>
+																<li data-jstree='"type":"js"}'>usa_states.js</li>
+																<li data-jstree='"type":"js"}'>world_countries.js</li>
+															</ul>
+														</li>
+														<li>multiple-email
+															<ul>
+																<li data-jstree='"type":"js"}'>multiple-email-active.js</li>
+															</ul>
+														</li>
+														<li>password-meter
+															<ul>
+																<li data-jstree='"type":"js"}'>password-meter-active.js</li>
+																<li data-jstree='"type":"js"}'>pwstrength-bootstrap.min.js</li>
+																<li data-jstree='"type":"js"}'>zxcvbn.js</li>
+															</ul>
+														</li>
+														<li>pdf
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.media.js</li>
+																<li data-jstree='"type":"js"}'>pdf-active.js</li>
+															</ul>
+														</li>
+														<li>peity
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.peity.min.js</li>
+																<li data-jstree='"type":"js"}'>peity-active.js</li>
+															</ul>
+														</li>
+														<li>rangle-slider
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery-ui-1.10.4.custom.min.js</li>
+																<li data-jstree='"type":"js"}'>jquery-ui-touch-punch.min.js</li>
+																<li data-jstree='"type":"js"}'>rangle-active.js</li>
+															</ul>
+														</li>
+														<li>rounded-counter
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.appear.js</li>
+																<li data-jstree='"type":"js"}'>jquery.countdown.min.js</li>
+																<li data-jstree='"type":"js"}'>jquery.knob.js</li>
+																<li data-jstree='"type":"js"}'>knob-active.js</li>
+															</ul>
+														</li>
+														<li>select2
+															<ul>
+																<li data-jstree='"type":"js"}'>select2.full.min.js</li>
+																<li data-jstree='"type":"js"}'>select2-active.js</li>
+															</ul>
+														</li>
+														<li>skycons
+															<ul>
+																<li data-jstree='"type":"js"}'>skycons.active.js</li>
+																<li data-jstree='"type":"js"}'>skycons.min.js</li>
+															</ul>
+														</li>
+														<li>skycons
+															<ul>
+																<li data-jstree='"type":"js"}'>sparkline-active.js</li>
+																<li data-jstree='"type":"js"}'>jquery.sparkline.min.js</li>
+															</ul>
+														</li>
+														<li>switcher
+															<ul>
+																<li data-jstree='"type":"js"}'>styleswitch.js</li>
+																<li data-jstree='"type":"js"}'>switch-active.js</li>
+															</ul>
+														</li>
+														<li>todo
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.todo.js</li>
+															</ul>
+														</li>
+														<li>touchspin
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery.bootstrap-touchspin.min.js</li>
+																<li data-jstree='"type":"js"}'>touchspin-active.js</li>
+															</ul>
+														</li>
+														<li>tree-line
+															<ul>
+																<li data-jstree='"type":"js"}'>jstree.active.js</li>
+																<li data-jstree='"type":"js"}'>jstree.min.js</li>
+															</ul>
+														</li>
+														<li>vendor
+															<ul>
+																<li data-jstree='"type":"js"}'>jquery-1.11.3.min.js</li>
+																<li data-jstree='"type":"js"}'>modernizr-2.8.3.min.js</li>
+															</ul>
+														</li>
+														<li>wow
+															<ul>
+																<li data-jstree='"type":"js"}'>wow.min.js</li>
+															</ul>
+														</li>
+                                                        <li data-jstree='"type":"js"}'>bootstrap.min.js</li>
+                                                        <li data-jstree='"type":"js"}'>jquery-ui.min.js</li>
+                                                        <li data-jstree='"type":"js"}'>jquery.meanmenu.js</li>
+                                                        <li data-jstree='"type":"js"}'>jquery-1.11.3.min.js</li>
+                                                        <li data-jstree='"type":"js"}'>modernizr-2.8.3.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mCustomScrollbar.concat.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap-datetimepicker.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap-editable.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>datepicker-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>dropzone.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>form-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.form.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.maskedinput.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mCustomScrollbar.concat.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.meanmenu.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mockjax.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.scrollUp.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.sticky.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.validate.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery-ui.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>Lobibox.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>main.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>masking-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>mock-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>modal-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>moment.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>notification-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>select2.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>summernote.min.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>summernote-active.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>typeahead.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>typeaheadjs.js</li>
+                                                        <li class="text-navy" data-jstree='"type":"js"}'>xediable-active.js</li>
+                                                    </ul>
+                                                </li>
+                                                <li data-jstree='"type":"html"}'> index.html</li>
+                                                <li data-jstree='"type":"html"}'> index-1.html</li>
+                                                <li data-jstree='"type":"html"}'> index-2.html</li>
+                                                <li data-jstree='"type":"html"}'> add-course.html</li>
+                                                <li data-jstree='"type":"html"}'> add-department.html</li>
+                                                <li data-jstree='"type":"html"}'> add-library-assets.html</li>
+                                                <li data-jstree='"type":"html"}'> add-professor.html</li>
+                                                <li data-jstree='"type":"html"}'> add-student.html</li>
+                                                <li data-jstree='"type":"html"}'> all-courses.html</li>
+                                                <li data-jstree='"type":"html"}'> all-professors.html</li>
+                                                <li data-jstree='"type":"html"}'> all-students.html</li>
+                                                <li data-jstree='"type":"html"}'> course-info.html</li>
+                                                <li data-jstree='"type":"html"}'> departments.html</li>
+                                                <li data-jstree='"type":"html"}'> edit-course.html</li>
+                                                <li data-jstree='"type":"html"}'> edit-department.html</li>
+                                                <li data-jstree='"type":"html"}'> edit-library-assets.html</li>
+                                                <li data-jstree='"type":"html"}'> edit-professor.html</li>
+                                                <li data-jstree='"type":"html"}'> edit-student.html</li>
+                                                <li data-jstree='"type":"html"}'> events.html</li>
+                                                <li data-jstree='"type":"html"}'> library-assets.html</li>
+                                                <li data-jstree='"type":"html"}'> professor-profile.html</li>
+                                                <li data-jstree='"type":"html"}'> student-profile.html</li>
+                                                <li data-jstree='"type":"html"}'> 404.html</li>
+                                                <li data-jstree='"type":"html"}'> 500.html</li>
+                                                <li data-jstree='"type":"html"}'> accordion.html</li>
+                                                <li data-jstree='"type":"html"}'> advance-form-element.html</li>
+                                                <li data-jstree='"type":"html"}'> alerts.html</li>
+                                                <li data-jstree='"type":"html"}'> analytics.html</li>
+                                                <li data-jstree='"type":"html"}'> area-charts.html</li>
+                                                <li data-jstree='"type":"html"}'> bar-charts.html</li>
+                                                <li data-jstree='"type":"html"}'> basic-form-element.html</li>
+                                                <li data-jstree='"type":"html"}'> buttons.html</li>
+                                                <li data-jstree='"type":"html"}'> c3.html</li>
+                                                <li data-jstree='"type":"html"}'> code-editor.html</li>
+                                                <li data-jstree='"type":"html"}'> contacts.html</li>
+                                                <li data-jstree='"type":"html"}'> data-maps.html</li>
+                                                <li data-jstree='"type":"html"}'> data-table.html</li>
+                                                <li data-jstree='"type":"html"}'> dual-list-box.html</li>
+                                                <li data-jstree='"type":"html"}'> google-map.html</li>
+                                                <li data-jstree='"type":"html"}'> images-cropper.html</li>
+                                                <li data-jstree='"type":"html"}'> line-charts.html</li>
+                                                <li data-jstree='"type":"html"}'> lock.html</li>
+                                                <li data-jstree='"type":"html"}'> login.html</li>
+                                                <li data-jstree='"type":"html"}'> mailbox.html</li>
+                                                <li data-jstree='"type":"html"}'> mailbox-compose.html</li>
+                                                <li data-jstree='"type":"html"}'> mailbox-view.html</li>
+                                                <li data-jstree='"type":"html"}'> modals.html</li>
+                                                <li data-jstree='"type":"html"}'> multi-upload.html</li>
+                                                <li data-jstree='"type":"html"}'> notifications.html</li>
+                                                <li data-jstree='"type":"html"}'> password-meter.html</li>
+                                                <li data-jstree='"type":"html"}'> password-recovery.html</li>
+                                                <li data-jstree='"type":"html"}'> pdf-viewer.html</li>
+                                                <li data-jstree='"type":"html"}'> peity.html</li>
+                                                <li data-jstree='"type":"html"}'> preloader.html</li>
+                                                <li data-jstree='"type":"html"}'> register.html</li>
+                                                <li data-jstree='"type":"html"}'> rounded-chart.html</li>
+                                                <li data-jstree='"type":"html"}'> sparkline.html</li>
+                                                <li data-jstree='"type":"html"}'> tabs.html</li>
+                                                <li data-jstree='"type":"html"}'> tinymc.html</li>
+                                                <li data-jstree='"type":"html"}'> tree-view.html</li>
+                                                <li data-jstree='"type":"html"}'> widgets.html</li>
+                                                <li data-jstree='"type":"html"}'> x-editable.html</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+</pre>
+                </div>
+                <div id="three" class="content fade">
 
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
-                    </div>
+                    <h1> HTML Structure </h1>
+                    <div>The base structure was organized by row, col-** class </div>
+                    <pre>
+<xmp>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="logo">
+                    <a href="dashboard.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+            </div><!-- column end -->
+        </div> <!-- row end -->
+    </div> <!-- container end -->
+</xmp>
+</pre>
 
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+                </div>
+                
+                <div id="six" class="content fade">
+				
+				<div class="plugins-area">
+					<h1>Plugins</h1>
+					<div class="static-table-list">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Plugin Name</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>C3 And D3</td>
+									<td>we are going to show you how to get started with C3 and <a href="http://c3js.org/gettingstarted.html">read more</a></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Chart</td>
+									<td>Simple yet flexible JavaScript charting for designers & developersand <a href="http://www.chartjs.org/">read more</a></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Chosen</td>
+									<td>Chosen is a jQuery plugin that makes long and <a href="https://harvesthq.github.io/chosen/">read more</a></td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>CodeMirror</td>
+									<td>CodeMirror is a versatile text editor implemented in JavaScript for the browser and <a href="http://codemirror.net/index.html">read more</a></td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Colorpicker</td>
+									<td>Satisfied with the solutions available for colorpicking and <a href="http://bgrins.github.io/spectrum/">read more</a></td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>counterup</td>
+									<td>COUNTER-UP JQUERY PLUGIN and <a href="http://bfintal.github.io/Counter-Up/demo/demo.html">read more</a></td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>Cropper</td>
+									<td>A simple jQuery image cropping plugin and <a href="https://fengyuanchen.github.io/cropper/">read more</a></td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>Data Map</td>
+									<td>HTML5 maps look gorgeous on iPhones, Android devices and iPads <a href="http://simplemaps.com/us">read more</a></td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>Datepicker</td>
+									<td>Bootstrap-datepicker provides a flexible datepicker widget in the Bootstrap style and <a href="https://bootstrap-datepicker.readthedocs.io/en/stable/">read more</a></td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>X-editable</td>
+									<td>X-editable can be used with any engine (bootstrap, jquery-ui, jquery only) and includes both popup and inline modes and <a href="http://vitalets.github.io/x-editable/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>Dual Listbox</td>
+									<td>Bootstrap Dual Listbox is a responsive dual listbox widget optimized for Twitter Bootstrap and <a href="https://www.virtuosoft.eu/code/bootstrap-duallistbox/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>plot Chart</td>
+									<td>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features and <a href="http://www.flotcharts.org/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>Google Maps</td>
+									<td>All of the examples contained in the Google Maps JavaScript API documentation set are listed below for quick reference and <a href="https://developers.google.com/maps/documentation/javascript/examples/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>iCheck</td>
+									<td>UPER CUSTOMIZED CHECKBOXES AND RADIO BUTTONS FOR JQUERY & ZEPTO and <a href="http://icheck.fronteed.com/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>RangeSlider</td>
+									<td>Ion.RangeSlider 2.2.0. jQuery-plugin Easy, flexible and responsive range slider with skin support and <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Read More</a></td>
+								</tr>
+								<tr>
+									<td>16</td>
+									<td>jvectormap</td>
+									<td>JavaScript-based jVectorMap uses only native browser technologies like JavaScript, CSS, HTML, SVG or VML and <a href="http://jvectormap.com/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>17</td>
+									<td>Knob</td>
+									<td>jQuery Knob mouse click and wheel mouse, keyboard (on focus) and fingers (touch events) and <a href="http://anthonyterrien.com/demo/knob/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>18</td>
+									<td>Mapael</td>
+									<td>Ease the build of pretty data visualizations on dynamic vector maps and <a href="https://www.vincentbroute.fr/mapael/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>19</td>
+									<td>Password Meter</td>
+									<td>jQuery Password Strength Meter for Twitter Bootstrap and <a href="https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/index.html">Read More</a></td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>PDF Viewer</td>
+									<td>The jQuery Media Plugin supports unobtrusive conversion of standard markup into rich media content and <a href="http://malsup.com/jquery/media/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>21</td>
+									<td>Peity Charts</td>
+									<td>Peity (sounds like deity) is a jQuery plugin that converts an element's content into a mini pie  donut  line  or bar chart  and is compatible with any browser that supports Chrome, Firefox, IE9+, Opera, Safari and <a href="http://benpickles.github.io/peity/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>22</td>
+									<td>Skycons</td>
+									<td>Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag and <a href="https://darkskyapp.github.io/skycons/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>23</td>
+									<td>Sparklines</td>
+									<td>This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript and <a href="https://omnipotent.net/jquery.sparkline/#s-about">Read More</a></td>
+								</tr>
+								<tr>
+									<td>24</td>
+									<td>TouchSpin</td>
+									<td>A mobile and touch friendly input spinner component for Bootstrap 3. It supports the mousewheel and the up/down keys and <a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>25</td>
+									<td>jsTree</td>
+									<td>jsTree is jquery plugin, that provides interactive trees. It is absolutely free, open source and distributed under the MIT license. jsTree is easily extendable, themable and configurable, it supports HTML & JSON data sources and AJAX loading and <a href="https://www.jstree.com/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>26</td>
+									<td>Lobibox</td>
+									<td>Free responsive jQuery messagebox and notification plugin available for commercial and non-commercial usages and <a href="http://lobianijs.com/site/lobibox">Read More</a></td>
+								</tr>
+								<tr>
+									<td>26</td>
+									<td>WOW</td>
+									<td>Reveal Animations When You Scroll. Very Animate.css Friend :-) Easily customize animation settings: style, delay, length, offset, iterations... and <a href="http://mynameismatthieu.com/WOW/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>27</td>
+									<td>Data Table</td>
+									<td>An extended Bootstrap table with radio, checkbox, sort, pagination, and other added features and <a href="http://issues.wenzhixin.net.cn/bootstrap-table/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>28</td>
+									<td>Custom scrollbar</td>
+									<td>Highly customizable custom scrollbar jQuery plugin. Features include vertical and/or horizontal scrollbar(s), adjustable scrolling momentum, mouse-wheel and <a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Read More</a></td>
+								</tr>
+								<tr>
+									<td>29</td>
+									<td>Summernote</td>
+									<td>Customize by Initializing various options and modules and <a href="https://summernote.org/">Read More</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+                    
+                    
+                    <h1>Tinymc Editor Structure</h1>
+					<h3>Quick start</h3>
+			<p>Copy-paste the stylesheet "link" into your "head" before all other stylesheets to load our CSS.</p>
+			<pre>
+	<xmp>
+	<!-- summernote CSS
+		============================================ -->
+        <link rel="stylesheet" href="{{asset('assets/css/summernote.css')}}">
+	</xmp>
+</pre>
+<p>The end of your pages, right before the closing "body" tag. Be sure to place js first, as our JavaScript plugins depend on them. </p>
+			<pre>
+	<xmp>
+	<!-- summernote JS
+		============================================ -->
+        <script src="{{asset('js/summernote.min.js')}}"></script>
+        <script src="{{asset('assets/js/summernote-active.js')}}"></script>
+	</xmp>
+</pre>
+                    
+                    <pre>
+                        <xmp>
+    <div class="tinymce-single nt-mg-b-30">
+		<div class="alert-title">
+			<h2>Basic Summernote WYSIWYG editor</h2>
+			<p>The fastest way to get Summernote WYSIWYG editor is powerfull JavaScript plugin. you can easily maintance typography system.</p>
+		</div>
+		<div id="summernote1">
+		</div>
+	</div>                             
+                        </xmp>
+                    </pre>
+                    
+                    
+                </div>
+                
+                
+                <div id="source" class="content fade">
+                    <h1> Sources &amp; Credits </h1>
+                    
+                    <h3>Fonts</h3>
+                    <ul>
+                        <li><a href="https://fonts.googleapis.com/">Google Fonts</a></li>
+                    </ul>
+                    
+                    <h3>Icons</h3>
+                    <ul>
+                        <li><a href="http://fontawesome.io/">Font Awesome</a></li>
+                    </ul>
+                    <h3>Scripts</h3>
+                    <ul>
+                        <li><a href="http://benpickles.github.io/peity/">Peity Charts</a></li>
+                        <li><a href="https://omnipotent.net/jquery.sparkline/#s-about">Sparklines</a></li>
+                        <li><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Scrollbar</a></li>
+                        <li><a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/">TouchSpin</a></li>
+                        <li><a href="http://issues.wenzhixin.net.cn/bootstrap-table/">Data Table</a></li>
+                        <li><a href="https://www.jstree.com/">JsTree</a></li>
+                        <li><a href="https://darkskyapp.github.io/skycons/">Skycons</a></li>
+                        <li><a href="https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/index.html">Password Meter</a></li>
+                        <li><a href="http://malsup.com/jquery/media/">PDF Viewer</a></li>
+                        <li><a href="https://www.vincentbroute.fr/mapael/">Mapael</a></li>
+                        <li><a href="http://jvectormap.com/">jvectormap</a></li>
+                        <li><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">RangeSlider</a></li>
+                        <li><a href="https://fengyuanchen.github.io/cropper/">Cropper</a></li>
+                        <li><a href="http://simplemaps.com/us">Data Map</a></li>
+                        <li><a href="http://codemirror.net/index.html">CodeMirror</a></li>
+                        <li><a href="https://harvesthq.github.io/chosen/">Chosen</a></li>
+                        <li><a href="http://c3js.org/gettingstarted.html">C3 And D3</a></li>
+                        <li><a href="https://www.malot.fr/bootstrap-datetimepicker/">datetimepicker</a></li>
+                        <li><a href="http://github.com/vitalets/x-editable">x-editable</a></li>
+                        <li><a href="http://www.dropzonejs.com//">dropzonejs</a></li>
+                        <li><a href="http://jquery.malsup.com/form/#ajaxForm">form Validation</a></li>
+                        <li><a href="https://github.com/jzaefferer/jquery-validation">form Validation</a></li>
+                        <li><a href="http://digitalbush.com/projects/masked-input-plugin/#license">masked input</a></li>
+                        <li><a href="https://github.com/jakerella/jquery-mockjax">mockjax</a></li>
+                        <li><a href="https://lobianijs.com/site/lobibox">lobibox</a></li>
+                        <li><a href="http://summernote.org/">summernote</a></li>
+                        <li><a href="https://vitalets.github.io/x-editable/">editable</a></li>
+                    </ul>
+                </div>
+                <div id="support" class="content fade">
+                    <h1> Supports </h1>
+                    <p>Thank you for reading the documentaion. If you still have any question or any problem, please contact with us. We will give you best support. Thanks.</p>
+                    <a href="https://colorlib.com/wp/forums/" >SRThemes</a>
+                </div>
+                <div id="nine" class="content fade">
+                    <h1> Sliders Structure </h1>
+                    <div>The base structure was organized by row, col-** class </div>
+                    <pre>
+    <xmp>
+    <!-- code will be here -->
+    </xmp>
+</pre>
+                    <!-- code pre tag end -->
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <script src="{{asset('assets/js/jquery-3.1.0.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('assets/js/jstree.min.js')}}"></script>
+    <script src="{{asset('assets/js/jstree.active.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+</body>
+
 </html>
