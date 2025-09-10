@@ -13,7 +13,7 @@ class CataController extends Controller
     public function index()
     {
         $data=cata::get();
-        return view('stud.index',compact('data'));
+        return view('category.index',compact('data'));
     }
 
     /**
