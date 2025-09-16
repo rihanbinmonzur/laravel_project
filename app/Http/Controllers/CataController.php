@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\cata;
 use Illuminate\Http\Request;
 
+
 class CataController extends Controller
 {
     /**
@@ -12,8 +13,8 @@ class CataController extends Controller
      */
     public function index()
     {
-        $data=cata::get();
-        return view('category.index',compact('data'));
+        $datas=cata::paginate(15);
+        return view('category.index',compact('datas'));
     }
 
     /**
@@ -59,12 +60,23 @@ class CataController extends Controller
         return redirect()->route('stud.index');
     }
 
-    /**
+//     /**
+//      * Remove the specified resource from storage.
+//      */
+//     public function destroy(cata $stud)
+//     {
+//        $stud->delete();
+//        return redirect()->route('stud.index');
+//     }
+// }
+
+
+  /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cata $stud)
+    public function destroy($id)
     {
-       $stud->delete();
-       return redirect()->route('stud.index');
+       cata::find($id)->delete();
+       return redirect()->back()->with('success','successfully deleted');
     }
 }

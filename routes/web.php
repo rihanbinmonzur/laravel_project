@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+
+
+
+Auth::routes();
+
+Route::get('category', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+
+
+
+Route::resource('stud', CataController::class);
+
+Route::resource('category',CataController::class);
