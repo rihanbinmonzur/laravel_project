@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="fixed">
+<html class="fixed sidebar-left-collapsed">
 	<head>
 
 		<!-- Basic -->
@@ -287,11 +287,10 @@
 											<span>Dashboard</span>
 										</a>
 									</li>
-									<li>
-										<a href="mailbox-folder.html">
-											<span class="pull-right label label-primary">18</span>
-											<i class="fa fa-envelope" aria-hidden="true"></i>
-											<span>Mailbox</span>
+										<li>
+										<a href="{{route('category.index')}}" target="_blank">
+											
+											<span>Category</span>
 										</a>
 									</li>
 									<li class="nav-parent">

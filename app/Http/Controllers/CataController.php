@@ -30,6 +30,13 @@ class CataController extends Controller
      */
     public function store(Request $request)
     {
+
+        $input=$request->all();
+        if($request->hasFile('image_url')){
+            $fileName = time().'.'.$request->image_url->extension();  
+            $request->image_url->move(public_path('uploads'), $fileName);
+            $input['image_url']=$fileName;
+        }
         cata::create($request->all());
         return redirect()->route('stud.index');
     }

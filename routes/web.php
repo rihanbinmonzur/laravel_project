@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CataController;
+use App\Http\Controllers\CataController; 
+
+use App\Http\Controllers\DashboardController; 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,25 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('category',CataController::class);
+    Route::resource('stud', CataController::class);
+
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::resource('book',BookController::class);
 
 
 
 Auth::routes();
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('category', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
-
-
-Route::resource('stud', CataController::class);
-
-Route::resource('category',CataController::class);

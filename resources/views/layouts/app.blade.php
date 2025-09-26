@@ -259,7 +259,12 @@
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a href="#" onclick="event.preventDefault(); document.getElementById('logout').submit();"><i class="fa fa-power-off"></i> Logout</a>
+
+									<form method="POST" action="{{route('logout')}}" id="logout" style="display:none">
+										@csrf 
+
+									</form>
 								</li>
 							</ul>
 						</div>
@@ -301,15 +306,15 @@
 									<li>
 										
 											<span class="pull-right label label-primary">18</span>
-											<a href="{{route('stud.index')}}">
-											<i class="fa fa-envelope" aria-hidden="true"></i>
+											<a href="{{route('category.index')}}">
+										
 											<span>category</span>
 										</a>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Pages</span>
+											<span>Books</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -349,7 +354,7 @@
 											</li>
 											<li>
 												<a href="pages-timeline.html">
-													 Timeline
+													 voucher
 												</a>
 											</li>
 											<li>
@@ -732,8 +737,63 @@
 				
 				</aside>
 				<!-- end: sidebar -->
+				 <section  role="main" class="content-body" >
+						<header class="page-header">
+						</header>
+				 
 
 		@yield('content')
+			</section>
+			</div>
+
+		<!-- Vendor -->
+		<script src="{{asset('assets/vendor/jquery/jquery.js') }}"></script>
+		<script src="{{asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
+		<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
+		<script src="{{ asset('assets/vendor/nanoscroller/nanoscroller.js')}}"></script>
+		<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+		<script src="{{asset('assets/vendor/magnific-popup/magnific-popup.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jquery-placeholder/jquery.placeholder.js')}}')}}"></script>
+		
+		<!-- Specific Page Vendor -->
+		<script src="{{asset('assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jquery-appear/jquery.appear.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jquery-easypiechart/jquery.easypiechart.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/flot/jquery.flot.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/flot-tooltip/jquery.flot.tooltip.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/flot/jquery.flot.pie.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/flot/jquery.flot.categories.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/flot/jquery.flot.resize.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jquery-sparkline/jquery.sparkline.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/raphael/raphael.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/morris/morris.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/gauge/gauge.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/snap-svg/snap.svg.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/liquid-meter/liquid.meter.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/jquery.vmap.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/data/jquery.vmap.sampledata.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/jquery.vmap.world.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js')}}')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js')}}"></script>
+		<script src="{{asset('assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js')}}"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="{{asset('assets/javascripts/theme.js')}}"></script>
+		
+		<!-- Theme Custom -->
+		<script src="{{asset('assets/javascripts/theme.custom.js')}}"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="{{asset('assets/javascripts/theme.init.js')}}"></script>
+
+
+		<!-- Examples -->
+		<script src="{{asset('assets/javascripts/dashboard/examples.dashboard.js')}}"></script>
 
 	
 		@stack('scripts')
