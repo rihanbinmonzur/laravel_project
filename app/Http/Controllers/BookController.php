@@ -20,7 +20,7 @@ class BookController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {  
+    {
          $book=book::all();
         return view ('book.create',compact('book'));
     }
@@ -47,7 +47,8 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        $category=category::find();
+        return view('product.edit',compact('category','Book'));
     }
 
     /**
@@ -55,7 +56,23 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+         $product->update($request->all());
+        // return redirect()->route('product.index');
+
+        if ($request->hasFile('image_url')) {
+
+        if ($product->image_url && file_exists(public_path('uploads/'.$product->image_url))) {
+            unlink(public_path('uploads/'.$product->image_url));
+        }
+        $fileName = time().'_'.$request->file('image_url')->getClientOriginalName();
+        $request->file('image_url')->move(public_path('uploads'), $fileName);
+
+        $product->image_url = $fileName;
+    }
+
+    $product->save();
+
+    return redirect()->route('book.index');
     }
 
     /**
